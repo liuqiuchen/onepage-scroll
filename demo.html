@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>onpage-scroll</title>
+	<link rel="stylesheet" href="onepage-scroll.css">
+	<link rel="stylesheet" href="demo.css">
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="jquery.onepage-scroll.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+	<div class="main onepage-wrapper">
+		<section class="section page1">
+			<img src="phones.png" alt="phones">
+		</section>
+		<section class="section page2">
+			<img src="back-phone.png" alt="back-phone">
+		</section>
+		<section class="section page3">
+			<img src="tilted-phone.png" alt="tiled-phone">
+		</section>
+	</div>
+</div>
+
+
+
+<script>
+$(function () {
+	$('.main section.page1 > img ').delay(300).animate({
+		'right': '0'
+	}, 300);
+});
+
+$('.main').onepage_scroll({
+	sectionContainer: "section",
+	easing: "ease",
+	animationTime: 300,
+	pagination:true,
+	updateURL: false,
+	beforeMove: function (index) {
+		switch (index) {
+			case 1:
+				$('.main section.page1 > img ').css({
+					'right': '-300px'
+				});
+				break;
+			case 2:
+				$('.main section.page2 > img ').css({
+					'left': '-150px'
+				});
+				break;
+			case 3:
+				$('.main section.page3 > img ').css({
+					'left': '-150px'
+				});
+			default:
+				break;	
+		}
+	},
+	afterMove: function (index) {
+		switch (index) {
+			case 1:
+				$('.main section.page1 > img ').animate({
+					'right': '0'
+				}, 300);
+				break;
+			case 2:
+				$('.main section.page2 > img ').animate({
+					'left': '0'
+				}, 300);
+				break;
+			case 3:
+				$('.main section.page3 > img ').animate({
+					'left': '0'
+				}, 300);
+				break;
+			default:
+				break;	
+		}
+	},
+	loop: false,
+	keyboard: true,
+	responsiveFallback: false,
+	direction: "vertical"
+});
+</script>
+
+
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
